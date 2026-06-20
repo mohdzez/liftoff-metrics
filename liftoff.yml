@@ -1,0 +1,24 @@
+# Reference config for this service. Liftoff's canvas (Service rows) is the
+# authoritative source of truth at deploy time, so the settings below are a hint
+# — set the same values in the UI:
+#   - Build strategy: Dockerfile
+#   - Port: 3000, Healthcheck: /health
+#   - Release command: npm run migrate   (runs the DB migration before each deploy)
+#   - Add a PostgreSQL resource and draw an edge from it to this service so
+#     DATABASE_URL is injected.
+version: '2.0'
+services:
+  - name: web
+    type: service
+    runtime:
+      port: 3000
+      instance_size: apps-s-1vcpu-0.5gb
+      replicas: 1
+    build:
+      strategy: dockerfile
+      dockerfile_path: Dockerfile
+    routes:
+      - path: /
+    healthcheck:
+      path: /health
+    releaseCommand: npm run migrate

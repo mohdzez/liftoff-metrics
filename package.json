@@ -1,0 +1,18 @@
+{
+  "name": "liftoff-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A tiny Postgres-backed demo app for exercising the Liftoff platform: live DB connection status, a migration release-command, request logging, and on-demand CPU load for the metrics charts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "migrate": "node migrate.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}
