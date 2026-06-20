@@ -51,3 +51,4 @@ With no `DATABASE_URL` the app still boots and shows a "no database connected" s
 4. **Deploy.** The release command migrates the DB before the app goes live.
 5. Open the app URL — you should see **Connected · schema ready** and a growing
    visit count. Click **Generate CPU load**, then watch the Metrics tab.
+# liftoff-metrics
